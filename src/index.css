@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Developer's Snippet Vault - Dark Theme Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* VS Code/GitHub inspired dark theme */
+    --background: 220 13% 8%;
+    --foreground: 220 12% 95%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 220 12% 95%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 220 12% 95%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 12% 85%;
+
+    --muted: 220 13% 12%;
+    --muted-foreground: 220 9% 55%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 220 13% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 13% 95%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 217 91% 65%;
+
+    --radius: 0.5rem;
+
+    /* Syntax highlighting colors */
+    --syntax-keyword: 207 61% 59%;
+    --syntax-string: 142 76% 36%;
+    --syntax-number: 221 87% 60%;
+    --syntax-comment: 220 9% 55%;
+    --syntax-function: 359 100% 86%;
+    --syntax-variable: 39 67% 69%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%) 0%, hsl(142 76% 36%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(39 67% 69%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 13% 10%) 0%, hsl(220 13% 12%) 100%);
+
+    /* Code editor styles */
+    --code-bg: 220 13% 9%;
+    --code-border: 220 13% 16%;
+
+    /* Animations */
+    --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 150ms var(--animation-smooth);
+    --transition-normal: 300ms var(--animation-smooth);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .code-block {
+    background: hsl(var(--code-bg));
+    border: 1px solid hsl(var(--code-border));
+  }
+
+  .syntax-keyword { color: hsl(var(--syntax-keyword)); }
+  .syntax-string { color: hsl(var(--syntax-string)); }
+  .syntax-number { color: hsl(var(--syntax-number)); }
+  .syntax-comment { color: hsl(var(--syntax-comment)); }
+  .syntax-function { color: hsl(var(--syntax-function)); }
+  .syntax-variable { color: hsl(var(--syntax-variable)); }
+}
